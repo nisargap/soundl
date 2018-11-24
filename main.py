@@ -22,13 +22,16 @@ def get_creds():
         return d
 def main():
     options = webdriver.ChromeOptions()
-    options.add_argument('headless')
+    prefs = {'prompt_for_download ': True}
+    options.add_experimental_option("prefs", prefs)
+    #options.add_argument('headless')
     driver = webdriver.Chrome(options=options)
     d = get_creds()
     login(driver, d["username"], d["password"])
     query=input("search: ")
     query=urllib.parse.quote_plus(query)
     driver.get("https://soundeo.com/search?q="+query)
+    time.sleep(1)
     # track-download-lnk    print(title.text)
     download_links = driver.find_elements_by_class_name("track-download-lnk")
     if (len(download_links) > 0):
@@ -40,4 +43,5 @@ def main():
         download_url = frame.get_attribute('src')
         r = requests.get(download_url)
         open(title.text+".mp3", 'wb').write(r.content)
+        driver.close()
 main()
