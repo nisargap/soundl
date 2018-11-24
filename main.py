@@ -24,7 +24,7 @@ def main():
     options = webdriver.ChromeOptions()
     prefs = {'prompt_for_download ': True}
     options.add_experimental_option("prefs", prefs)
-    #options.add_argument('headless')
+    options.add_argument('headless')
     driver = webdriver.Chrome(options=options)
     d = get_creds()
     login(driver, d["username"], d["password"])
