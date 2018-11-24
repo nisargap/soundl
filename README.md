@@ -34,9 +34,23 @@ Install python dependencies in the repo directory
 pip install -r requirements.txt
 ```
 
+Create a file called config.json with your credentials as defined below in the repo directory
+```
+{
+    "username": "email@gmail.com",
+    "password": "password123"
+}
+```
+
 Run the script
 
 ```
 python main.py
+```
+
+Deactivate the virtual environment once you're done
+
+```
+deactivate
 ```
 
