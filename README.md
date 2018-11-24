@@ -1,4 +1,6 @@
-# Music Downloader
+# Soundeo Auto
+
+built for a friend 
 
 ## Usage
 
