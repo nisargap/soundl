@@ -25,7 +25,7 @@ def main():
     options = webdriver.ChromeOptions()
     prefs = {'prompt_for_download ': True}
     options.add_experimental_option("prefs", prefs)
-    options.add_argument('headless')
+    # options.add_argument('headless')
     driver = webdriver.Chrome(options=options)
     d = get_creds()
     login(driver, d["username"], d["password"])
@@ -35,19 +35,25 @@ def main():
                 query=input("search (type q and enter to quit): ")
                 if (query == "q"):
                         break
-                query=urllib.parse.quote_plus(query)
-                driver.get("https://soundeo.com/search?q="+query)
+                query=query.strip(' ')
+                print("Processing %s" % (query))
+                # driver.get("https://soundeo.com/search?q="+query)
+                driver.get(query)
                 time.sleep(1.5)
                 download_links = driver.find_elements_by_class_name("track-download-lnk")
                 if (len(download_links) > 0):
                         download_links[0].click()
                         time.sleep(1.5)
+                        '''
                         files = driver.find_elements_by_class_name('info')
                         print("Downloading  "+files[0].text+" to downloads folder")
                         frame = driver.find_element_by_id("iDownload")
                         download_url = frame.get_attribute('src')
                         r = requests.get(download_url)
-                        open("./downloads/"+files[0].text+".mp3", 'wb').write(r.content)            
+                        open("./downloads/"+files[0].text+".mp3", 'wb').write(r.content)     
+                        '''
         except:
                 continue
+    while True:
+        time.sleep(1)
 main()
