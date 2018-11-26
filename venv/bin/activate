@@ -40,7 +40,7 @@ deactivate () {
 # unset irrelevant variables
 deactivate nondestructive
 
-VIRTUAL_ENV="/Users/nisargap/Documents/dev/go/music-downloader/venv"
+VIRTUAL_ENV="/Users/nisargap/Documents/dev/python/soundeo-dl/venv"
 export VIRTUAL_ENV
 
 _OLD_VIRTUAL_PATH="$PATH"

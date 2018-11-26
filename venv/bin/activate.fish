@@ -36,7 +36,7 @@ end
 # Unset irrelevant variables.
 deactivate nondestructive
 
-set -gx VIRTUAL_ENV "/Users/nisargap/Documents/dev/go/music-downloader/venv"
+set -gx VIRTUAL_ENV "/Users/nisargap/Documents/dev/python/soundeo-dl/venv"
 
 set -gx _OLD_VIRTUAL_PATH $PATH
 set -gx PATH "$VIRTUAL_ENV/bin" $PATH

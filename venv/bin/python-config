@@ -1,4 +1,4 @@
-#!/Users/nisargap/Documents/dev/go/music-downloader/venv/bin/python
+#!/Users/nisargap/Documents/dev/python/soundeo-dl/venv/bin/python
 
 import sys
 import getopt
