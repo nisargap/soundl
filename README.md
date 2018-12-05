@@ -1,6 +1,6 @@
 # Soundeo Auto
 
-built for a friend 
+built for a friend :)
 
 ## Usage
 
